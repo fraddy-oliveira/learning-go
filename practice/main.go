@@ -1,11 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 var LANG = "GOLANG"
 
 func main() {
-	variables()
+	getNameFromInput()
+}
+
+func getNameFromInput() {
+
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Print("Enter your name: ")
+
+	inputName, _ := reader.ReadString('\n')
+
+	fmt.Printf("You have entered %s", inputName)
 }
 
 func variables() {
