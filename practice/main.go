@@ -13,6 +13,10 @@ import (
 var SERVER_ERROR = "Oops!! Some error occurred, Please try again"
 
 func main() {
+	getYourInfo()
+}
+
+func getYourInfo() {
 	fmt.Print("Enter your name: ")
 
 	name, err := getName()
