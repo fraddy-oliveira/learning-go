@@ -15,7 +15,23 @@ import (
 var SERVER_ERROR = "Oops!! Some error occurred, Please try again"
 
 func main() {
-	getYourInfo()
+	pointers()
+}
+
+func pointers() {
+	name := "Tester"
+
+	namePointer := &name
+
+	fmt.Println("Name pointer is ", *namePointer)
+}
+
+func memoryAllocation() {
+	cardBrands := make(map[string]string)
+
+	cardBrands["VISA"] = "visa"
+
+	fmt.Printf("%s\n", cardBrands["VISA"])
 }
 
 func calculator() {
