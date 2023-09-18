@@ -7,6 +7,7 @@ import (
 	"log"
 	"math"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 	"time"
@@ -15,7 +16,61 @@ import (
 var SERVER_ERROR = "Oops!! Some error occurred, Please try again"
 
 func main() {
-	pointers()
+	maps()
+}
+
+func maps() {
+	countries := make(map[string]string)
+
+	countries["IND"] = "India"
+
+	countries["US"] = "United States of America"
+
+	countries["CA"] = "CANADA"
+
+	fmt.Printf("countries %v \n", countries)
+
+	// delete(countries, "CA")
+
+	keys := make([]string, len(countries))
+
+	i := 0
+
+	for code := range countries {
+		keys[i] = code
+		i++
+	}
+
+	sort.Strings(keys)
+
+	fmt.Printf("countries codes %v \n", keys)
+}
+
+func slices() {
+	countries := []string{"India", "Germany"}
+
+	countries = append(countries, "USA")
+
+	fmt.Println("countries: ", countries)
+
+	countries = append(countries[1 : len(countries)-1])
+
+	fmt.Println("countries: ", countries)
+
+	metals := make([]int, 1, 2)
+
+	metals = append(metals, 1)
+
+	fmt.Println("metals: ", metals)
+}
+
+func array() {
+	colors := [...]string{"RED", "BLUE", "GREEN"}
+
+	var numbers = [4]int{}
+
+	fmt.Printf("List of colors are %v \n", colors)
+	fmt.Printf("List of numbers are %v \n", numbers)
 }
 
 func pointers() {
